@@ -1,0 +1,24 @@
+{
+  "name": "slover",
+  "version": "0.1.0",
+  "description": "A tool to unify AI watermark detectors",
+  "keywords": [
+    "ai",
+    "watermark"
+  ],
+  "homepage": "https://github.com/skueee/slover#readme",
+  "bugs": {
+    "url": "https://github.com/skueee/slover/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skueee/slover.git"
+  },
+  "license": "MIT",
+  "author": "skueee",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
