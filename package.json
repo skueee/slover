@@ -22,6 +22,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@contentauth/c2pa-node": "^0.9.1"
+    "@contentauth/c2pa-node": "^0.9.1",
+    "mime": "^4.1.0"
+  },
+  "allowScripts": {
+    "@contentauth/c2pa-node@0.9.1": true
   }
 }
