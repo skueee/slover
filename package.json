@@ -20,5 +20,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@contentauth/c2pa-node": "^0.9.1"
   }
 }
