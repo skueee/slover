@@ -8,6 +8,10 @@ Supported watermarking techs
 
 - C2PA (done)
 - OpenAI verificator (in progress)
+- Stable signature
+- Meta Content Seal (Audiodeal, Videoseal, Textdeal, Imageseal)
+- Elevenlabs synthid (not sure)
+- Claude Watermark (when public)
 
 
 ## Official implementations
