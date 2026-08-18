@@ -9,7 +9,7 @@ class C2PACheck {
   }
 }
 
-export async function checkFile(path) {
+export async function c2paCheck(path) {
   const buffer = readFileSync(path);
   const mimeType = mime.getType(path)
   const reader = await Reader.fromAsset({
