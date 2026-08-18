@@ -1,6 +1,6 @@
-# slover
+![slover logo](/assets/banner.png)
 
-slover is a JavaScript library to unify AI watermark detection tools
+**slover is a JavaScript library to unify AI watermark detection tools**
 
 ## Installation
 
