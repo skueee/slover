@@ -35,8 +35,8 @@ export class ImageAnalysisResult {
   }
 }
 
-export async function imageAnalysis(path) {
-  const c2pa = await c2paCheck(path)
+export async function imageAnalysis(file) {
+  const c2pa = await c2paCheck(file)
   return new ImageAnalysisResult(c2pa)
 }
 
@@ -76,7 +76,7 @@ export class VideoAnalysisResult {
   }
 }
 
-export async function videoAnalysis(path) {
-  const c2pa = await c2paCheck(path)
+export async function videoAnalysis(file) {
+  const c2pa = await c2paCheck(file)
   return new VideoAnalysisResult(c2pa)
 }
