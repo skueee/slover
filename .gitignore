@@ -3,3 +3,6 @@ testfiles
 
 .venv/
 venv/
+ckpts/
+temp/
+src/models/*
