@@ -1,7 +1,10 @@
 import * as ort from 'onnxruntime-web';
 import sharp from 'sharp';
+
+// Temporary, just for debugging with local files :
 import { openAsBlob } from 'node:fs';
 
+// The video analysis class
 class VideosealAnalysis {
   constructor(flagged, confidence, message) {
     this.flagged = flagged
@@ -10,6 +13,7 @@ class VideosealAnalysis {
   }
 }
 
+// Running the model
 async function runInference(imageFloat32Array, height, width, model) {
   const session = await ort.InferenceSession.create(model);
 
@@ -26,6 +30,7 @@ async function runInference(imageFloat32Array, height, width, model) {
   return results.predictions;
 }
 
+// Convert blob files to Float32Array
 async function blobToFloat32Array(file, targetWidth, targetHeight) {
   const arrayBuffer = await file.arrayBuffer();
   const inputBuffer = Buffer.from(arrayBuffer);
@@ -49,7 +54,7 @@ async function blobToFloat32Array(file, targetWidth, targetHeight) {
   return float32Array;
 }
 
-
+// CHeck results (not working ?)
 function isFlagged(output) {
   const confidence = output[0];
 
@@ -65,6 +70,7 @@ function isFlagged(output) {
   return new VideosealAnalysis(flagged, confidence, message)
 }
 
+// The function to call
 async function imageAnalysis(file) {
   const image = await blobToFloat32Array(file, 256, 256)
 
@@ -73,13 +79,15 @@ async function imageAnalysis(file) {
   return isFlagged(predictions.cpuData);
 }
 
-const firstAnalysis = await imageAnalysis(await openAsBlob("/home/robin-brams/Documents/Code/slover/testfiles/image/videoseal.jpg"))
+
+// A bunch of crap for debugging. Feel free to move this.
+const firstAnalysis = await imageAnalysis(await openAsBlob("/home/robin-brams/Documents/Code/slover/testfiles/image/videoseal.jpg")) // Temporary - it's a local file for now
 // console.log(analysis)
 
 // console.log(analysis.message.join(""))
 console.log(firstAnalysis.flagged)
 console.log(firstAnalysis.confidence)
 
-const secondAnalysis = await imageAnalysis(await openAsBlob("/home/robin-brams/Documents/Code/slover/testfiles/image/notai.png"))
+const secondAnalysis = await imageAnalysis(await openAsBlob("/home/robin-brams/Documents/Code/slover/testfiles/image/notai.png")) // Temporary - it's a local file for now
 console.log(secondAnalysis.flagged)
 console.log(secondAnalysis.confidence)
