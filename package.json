@@ -22,7 +22,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@contentauth/c2pa-node": "^0.9.1"
+    "@contentauth/c2pa-node": "^0.9.1",
+    "onnxruntime-web": "^1.29.0",
+    "sharp": "^0.35.4"
   },
   "allowScripts": {
     "@contentauth/c2pa-node@0.9.1": true
