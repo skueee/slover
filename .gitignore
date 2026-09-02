@@ -6,3 +6,4 @@ venv/
 ckpts/
 temp/
 src/models/*
+.env/
