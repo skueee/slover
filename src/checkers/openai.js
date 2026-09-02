@@ -13,7 +13,7 @@ class OpenAIAnalysis {
 
 
 // Analysis method
-async function openaiAnalysis(file, api_key) {
+export async function openaiAnalysis(file, api_key) {
   // Formdata with the file
   var formdata = new FormData()
   formdata.append("file", file)
@@ -33,7 +33,7 @@ async function openaiAnalysis(file, api_key) {
 
   var json = await response.json()
   return new OpenAIAnalysis(
-    reponse.status,  // Request status
+    response.status,  // Request status
     json.results[0].outcome == "detected",  // C2PA flagged
     json.results[1].outcome == "detected",  // Synthid flagged
     json.results[0].model,  // Model infos (if any)
