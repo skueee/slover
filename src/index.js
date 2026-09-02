@@ -1,5 +1,12 @@
 import { c2paCheck } from "./checkers/c2pa.js"
 
+class Config {
+  constructor(ignore, openai_api_key) {
+    this.ignore = ignore
+    this.openai_api_key = openai_api_key
+  }
+}
+
 // Image analysis
 
 // Class ImageAnalysisResult : the thing that is returned when executing imageAnalysis
